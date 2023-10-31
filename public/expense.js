@@ -23,10 +23,12 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             visualization.classList.add("visualization");
             const chat = document.createElement("div");
             chat.classList.add("chat");
-            chat.style.height = expense.amount + "px";
+            chat.style.height = `${expense.amount * 4}px`;
             const day = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;
+            visualization.append(chat, day);
+            container === null || container === void 0 ? void 0 : container.append(visualization);
         });
     }
     catch (error) {

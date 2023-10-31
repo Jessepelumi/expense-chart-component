@@ -5,5 +5,9 @@
 @tailwind utilities;
 
 .visualization {
-    @apply flex flex-col gap-2 justify-end items-center
+    @apply flex flex-col gap-1 justify-end items-center
+}
+
+.chat {
+    @apply bg-primary-soft-red w-9 rounded-md
 }

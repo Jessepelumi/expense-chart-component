@@ -20,11 +20,15 @@ const renderData = async ():Promise<void> => {
 
             const chat:HTMLElement | null = document.createElement("div");
             chat.classList.add("chat");
-            chat.style.height = expense.amount + "px";
+            chat.style.height = `${expense.amount * 4}px`;
 
             const day:HTMLElement | null = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;
+
+            visualization.append(chat, day);
+
+            container?.append(visualization);
         });
 
     } catch (error) {
