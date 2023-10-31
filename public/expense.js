@@ -23,7 +23,7 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             visualization.classList.add("visualization");
             const chat = document.createElement("div");
             chat.classList.add("chat");
-            chat.style.height = `${expense.amount * 4}px`;
+            chat.style.height = `${expense.amount * 3}px`;
             const day = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;

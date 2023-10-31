@@ -9,5 +9,5 @@
 }
 
 .chat {
-    @apply bg-primary-soft-red w-9 rounded-md
+    @apply bg-primary-soft-red w-10 rounded-md
 }
