@@ -18,18 +18,36 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
         }
         const expenses = yield response.json();
         console.log(expenses);
+        let highestAmount = 0;
         expenses.forEach(expense => {
             const visualization = document.createElement("div");
             visualization.classList.add("visualization");
+            const label = document.createElement("span");
+            label.classList.add("label", "hidden");
+            label.innerText = `$${expense.amount}`;
             const chat = document.createElement("div");
             chat.classList.add("chat");
             chat.style.height = `${expense.amount * 3}px`;
+            console.log(`${expense.amount * 3}px`);
             const day = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;
-            visualization.append(chat, day);
+            visualization.append(label, chat, day);
             container === null || container === void 0 ? void 0 : container.append(visualization);
+            chat.addEventListener("mouseenter", () => {
+                label.classList.remove("hidden");
+            });
+            chat.addEventListener("mouseleave", () => {
+                label.classList.add("hidden");
+            });
+            if (expense.amount > highestAmount) {
+                highestAmount = expense.amount;
+            }
+            // if (chatWithHighestAmount === `${highestAmount * 3}px`) {
+            //     chat.style.backgroundColor = "blue";
+            // }
         });
+        console.log(`Highest expense: ${highestAmount * 3}px`);
     }
     catch (error) {
         console.error("An error occurred:", error);

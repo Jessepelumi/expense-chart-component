@@ -16,7 +16,8 @@ module.exports = {
         }
       },
       fontSize: {
-        "body-copy": "18px"
+        "body-copy": "18px",
+        "label": "12px"
       },
       fontFamily: {
          dmsans: ["DM Sans"]
