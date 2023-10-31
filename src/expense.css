@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 .visualization {
-    @apply flex flex-col gap-2 justify-center items-center
+    @apply flex flex-col gap-2 justify-end items-center
 }
