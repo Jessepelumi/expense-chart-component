@@ -5,13 +5,13 @@
 @tailwind utilities;
 
 .visualization {
-    @apply flex flex-col gap-1 justify-end items-center box-border
+    @apply flex flex-col gap-1 justify-end items-center box-border overflow-hidden
 }
 
 .chat {
-    @apply bg-primary-soft-red w-10 rounded-md 
+    @apply bg-primary-soft-red w-10 rounded-md box-border 
 }
 
 .label {
-    @apply bg-neutral-dark-brown p-1 rounded-md text-neutral-cream text-label box-content 
+    @apply bg-neutral-dark-brown p-1 rounded-md text-neutral-cream text-label box-border 
 }
