@@ -9,47 +9,45 @@
 </head>
 <body class="bg-neutral-cream h-screen flex justify-center items-center">
     
-    <div class="flex flex-col gap-5">
+    <div class="flex flex-col gap-3">
 
-        <div class="bg-primary-soft-red flex justify-between items-center rounded-xl p-5">
+        <div class="bg-primary-soft-red flex justify-between items-center rounded-xl p-5 animate-bounce-custom">
             <div class="flex flex-col text-neutral-pale-orange">
                 <span class="text-body-copy">
                     My balance
                 </span>
-                <span class="text-2xl font-bold">
+                <span class="text-3xl font-semibold">
                     $921.48
                 </span>
             </div>
     
             <div>
-                <img src="./assets/images/logo.svg" alt="logo">
+                <img src="./assets/images/logo.svg" alt="logo" class="hover:animate-spin-custom">
             </div>
         </div>
     
-        <div class="bg-neutral-pale-orange rounded-xl p-5 box-border">
-            <div class="text-neutral-dark-brown text-2xl font-bold">
+        <div class="bg-neutral-pale-orange rounded-xl p-5 box-border animate-bounce-custom">
+            <div class="text-neutral-dark-brown text-2xl font-semibold">
                 Spending - Last 7 days
             </div>
 
-            <div id="container" class="flex justify-evenly gap-2 pb-4 pt-10 text-neutral-medium-brown">
-                
-            </div>
+            <div id="container" class="flex gap-2 h-72 pb-4 text-neutral-medium-brown box-border"></div>
     
-            <div class="flex justify-between items-center border-t-2 border-t-neutral-cream pt-4">
+            <div class="flex justify-between items-end border-t-2 border-t-neutral-cream pt-4">
                 <div class="flex flex-col">
-                    <span class="text-neutral-medium-brown">
+                    <span class="text-neutral-medium-brown text-sm">
                         Total this month
                     </span>
-                    <span class="text-neutral-dark-brown text-3xl font-bold">
+                    <span class="text-neutral-dark-brown text-3xl font-semibold">
                         $478.33
                     </span>
                 </div>
     
                 <div class="flex flex-col text-end">
-                    <span class="text-neutral-dark-brown text-body-copy font-bold">
+                    <span class="text-neutral-dark-brown text-sm font-bold">
                         +2.4%
                     </span>
-                    <span class="text-neutral-medium-brown">
+                    <span class="text-neutral-medium-brown text-sm">
                         from last month
                     </span>
                 </div>

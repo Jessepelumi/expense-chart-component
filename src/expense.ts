@@ -1,5 +1,6 @@
 const container:HTMLElement | null = document.getElementById("container");
 
+
 const renderData = async ():Promise<void> => {
     let uri:RequestInfo = "./assets/data/expenses.json";
 
@@ -23,16 +24,22 @@ const renderData = async ():Promise<void> => {
             label.classList.add("label", "hidden");
             label.innerText = `$${expense.amount}`
 
+            const barContainer:HTMLElement | null = document.createElement("div");
+            barContainer.classList.add("barContainer");
+
             const chat:HTMLElement | null = document.createElement("div");
             chat.classList.add("chat");
             chat.style.height = `${expense.amount * 3}px`;
+            chat.style.width = `${100}%`
             console.log(`${expense.amount * 3}px`);
 
             const day:HTMLElement | null = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;
 
-            visualization.append(label, chat, day);
+            chat.append(label);
+            barContainer.append(chat);
+            visualization.append(barContainer, day);
 
             container?.append(visualization);
 
@@ -47,9 +54,6 @@ const renderData = async ():Promise<void> => {
                 highestAmount = expense.amount;
             }
             
-            // if (chatWithHighestAmount === `${highestAmount * 3}px`) {
-            //     chat.style.backgroundColor = "blue";
-            // }
 
         });
 

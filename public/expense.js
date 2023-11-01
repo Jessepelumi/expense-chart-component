@@ -25,14 +25,19 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             const label = document.createElement("span");
             label.classList.add("label", "hidden");
             label.innerText = `$${expense.amount}`;
+            const barContainer = document.createElement("div");
+            barContainer.classList.add("barContainer");
             const chat = document.createElement("div");
             chat.classList.add("chat");
             chat.style.height = `${expense.amount * 3}px`;
+            chat.style.width = `${100}%`;
             console.log(`${expense.amount * 3}px`);
             const day = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;
-            visualization.append(label, chat, day);
+            chat.append(label);
+            barContainer.append(chat);
+            visualization.append(barContainer, day);
             container === null || container === void 0 ? void 0 : container.append(visualization);
             chat.addEventListener("mouseenter", () => {
                 label.classList.remove("hidden");
@@ -43,9 +48,6 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             if (expense.amount > highestAmount) {
                 highestAmount = expense.amount;
             }
-            // if (chatWithHighestAmount === `${highestAmount * 3}px`) {
-            //     chat.style.backgroundColor = "blue";
-            // }
         });
         console.log(`Highest expense: ${highestAmount * 3}px`);
     }

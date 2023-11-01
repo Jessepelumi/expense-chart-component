@@ -17,10 +17,14 @@ module.exports = {
       },
       fontSize: {
         "body-copy": "18px",
-        "label": "12px"
+        "label": "10px"
       },
       fontFamily: {
          dmsans: ["DM Sans"]
+      },
+      animation: {
+        "bounce-custom": "bounce 0.8s linear 1.5",
+        "spin-custom": "spin 1.2s ease-in-out 1"
       }
     },
   },

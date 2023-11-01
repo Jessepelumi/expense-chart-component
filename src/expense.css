@@ -5,13 +5,17 @@
 @tailwind utilities;
 
 .visualization {
-    @apply flex flex-col gap-1 justify-end items-center box-border overflow-hidden
+    @apply flex flex-col gap-1 items-center w-full overflow-hidden
 }
 
 .chat {
-    @apply bg-primary-soft-red w-10 rounded-md box-border 
+    @apply bg-primary-soft-red w-full rounded-md box-border relative
 }
 
 .label {
-    @apply bg-neutral-dark-brown p-1 rounded-md text-neutral-cream text-label box-border 
+    @apply bg-neutral-dark-brown p-1 rounded-md text-neutral-cream text-label box-border w-full absolute -top-6
+}
+
+.barContainer {
+    @apply h-full w-10 flex items-end
 }
