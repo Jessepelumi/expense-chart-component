@@ -9,7 +9,7 @@
 }
 
 .chat {
-    @apply bg-primary-soft-red w-full rounded-md box-border relative
+    @apply bg-primary-soft-red w-full rounded-md box-border relative hover:bg-hover-soft-red
 }
 
 .label {
@@ -18,4 +18,8 @@
 
 .barContainer {
     @apply h-full w-10 flex items-end
+}
+
+.highestBar {
+    @apply bg-primary-cyan hover:bg-hover-cyan
 }

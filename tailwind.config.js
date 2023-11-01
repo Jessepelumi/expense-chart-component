@@ -13,6 +13,10 @@ module.exports = {
           "medium-brown": "hsl(28, 10%, 53%)",
           "cream": "hsl(27, 66%, 92%)",
           "pale-orange": "hsl(33, 100%, 98%)"
+        },
+        hover: {
+          "soft-red": "#FF9B86",
+          "cyan": "#B4E0E5",
         }
       },
       fontSize: {

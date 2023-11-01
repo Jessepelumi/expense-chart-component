@@ -18,7 +18,6 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
         }
         const expenses = yield response.json();
         console.log(expenses);
-        let highestAmount = 0;
         expenses.forEach(expense => {
             const visualization = document.createElement("div");
             visualization.classList.add("visualization");
@@ -31,7 +30,6 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             chat.classList.add("chat");
             chat.style.height = `${expense.amount}%`;
             chat.style.width = `${100}%`;
-            //console.log(`${expense.amount}%`);
             console.log(chat.style.height);
             const day = document.createElement("span");
             day.classList.add("day");
@@ -46,15 +44,19 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             chat.addEventListener("mouseleave", () => {
                 label.classList.add("hidden");
             });
-            if (expense.amount > highestAmount) {
-                highestAmount = expense.amount;
+            const keyToExtract = "amount";
+            const valuesArray = [];
+            for (const item of expenses) {
+                if (item.hasOwnProperty(keyToExtract)) {
+                    valuesArray.push(item[keyToExtract]);
+                }
             }
-            if (chat.style.height === `${highestAmount}%`) {
-                chat.style.backgroundColor = "blue";
+            ;
+            const highestValue = Math.max(...valuesArray);
+            if (chat.style.height === `${highestValue}%`) {
+                chat.classList.add("highestBar");
             }
-            console.log(chat.style.height === `${highestAmount}%`);
         });
-        console.log(`Highest expense: ${highestAmount}%`);
     }
     catch (error) {
         console.error("An error occurred:", error);
