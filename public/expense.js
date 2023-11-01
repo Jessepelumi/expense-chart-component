@@ -29,9 +29,10 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             barContainer.classList.add("barContainer");
             const chat = document.createElement("div");
             chat.classList.add("chat");
-            chat.style.height = `${expense.amount * 3}px`;
+            chat.style.height = `${expense.amount}%`;
             chat.style.width = `${100}%`;
-            console.log(`${expense.amount * 3}px`);
+            //console.log(`${expense.amount}%`);
+            console.log(chat.style.height);
             const day = document.createElement("span");
             day.classList.add("day");
             day.innerText = expense.day;
@@ -48,8 +49,12 @@ const renderData = () => __awaiter(void 0, void 0, void 0, function* () {
             if (expense.amount > highestAmount) {
                 highestAmount = expense.amount;
             }
+            if (chat.style.height === `${highestAmount}%`) {
+                chat.style.backgroundColor = "blue";
+            }
+            console.log(chat.style.height === `${highestAmount}%`);
         });
-        console.log(`Highest expense: ${highestAmount * 3}px`);
+        console.log(`Highest expense: ${highestAmount}%`);
     }
     catch (error) {
         console.error("An error occurred:", error);

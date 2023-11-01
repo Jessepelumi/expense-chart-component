@@ -29,9 +29,11 @@ const renderData = async ():Promise<void> => {
 
             const chat:HTMLElement | null = document.createElement("div");
             chat.classList.add("chat");
-            chat.style.height = `${expense.amount * 3}px`;
+            chat.style.height = `${expense.amount}%`;
             chat.style.width = `${100}%`
-            console.log(`${expense.amount * 3}px`);
+            //console.log(`${expense.amount}%`);
+            console.log(chat.style.height);
+            
 
             const day:HTMLElement | null = document.createElement("span");
             day.classList.add("day");
@@ -53,11 +55,16 @@ const renderData = async ():Promise<void> => {
             if (expense.amount > highestAmount) {
                 highestAmount = expense.amount;
             }
+            if (chat.style.height === `${highestAmount}%`) {
+                chat.style.backgroundColor = "blue";
+            }
             
 
+            console.log(chat.style.height === `${highestAmount}%`);
         });
 
-        console.log(`Highest expense: ${highestAmount * 3}px`);
+        console.log(`Highest expense: ${highestAmount}%`);
+        
         
 
     } catch (error) {
