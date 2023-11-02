@@ -13,7 +13,7 @@
 }
 
 .label {
-    @apply bg-neutral-dark-brown p-1 rounded-md text-neutral-cream text-label box-border w-full absolute -top-6
+    @apply bg-neutral-dark-brown p-1 rounded-md text-neutral-cream text-label box-border absolute -top-6 z-50 w-full
 }
 
 .barContainer {
